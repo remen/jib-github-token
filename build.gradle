@@ -1,7 +1,7 @@
 plugins {
-  id "java"
+  id("java")
+  id("application")
   id("com.google.cloud.tools.jib") version "3.1.4"
 }
 
-jib.to.image = 'ghcr.io/remen/jib-github-token'
-jib.from.image = 'eclipse-temurin:11'
+mainClassName="Application"

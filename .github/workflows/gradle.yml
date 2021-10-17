@@ -33,7 +33,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish docker image using docker
-      run: docker build -t ghrc.io/${{github.repository}}:docker -f Dockerfile build/install && docker push ghrc.io/${{github.repository}}:docker
+      run: docker build -t ghcr.io/${{github.repository}}:docker -f Dockerfile build/install && docker push ghcr.io/${{github.repository}}:docker
 
     - name: Publish docker image using jib
-      run: ./gradlew jib -Djib.from.image=eclipse-temurin:11 -Djib.to.image=ghrc.io/${{github.repository}}:jib
+      run: ./gradlew jib -Djib.from.image=eclipse-temurin:11 -Djib.to.image=ghcr.io/${{github.repository}}:jib

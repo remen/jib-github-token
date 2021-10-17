@@ -4,4 +4,8 @@ plugins {
   id("com.google.cloud.tools.jib") version "3.1.4"
 }
 
+tasks.build.dependsOn installDist
+tasks.distTar.enabled = false
+tasks.distZip.enabled = false
+
 mainClassName="Application"
